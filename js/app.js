@@ -1,7 +1,7 @@
 'use strict';
 console.log ('js is linked');
 
-
+var correctAnswer = 0;
 //Welcome ask name
 var userName = prompt ('Hi, Nice to meet you, what is your name?');
 console.log ('vistor\'s name is ' + userName);
@@ -23,6 +23,7 @@ var guessNameLower = guessName.toLowerCase();
 console.log ('Q: Is my name Suzanne? A: ' + guessNameLower);
 if (guessNameLower === 'yes' || guessNameLower === 'y') {
   alert ('Great job! That\'s me. My parents asked a nurse in the hospital to give me an american name. Thanks to her I have a name people can pronounce!');
+  correctAnswer++;
 } else {
   alert ('Incorrect. My name really is Suzanne');
 }
@@ -32,6 +33,7 @@ var fromSeattle = seattle.toLowerCase();
 console.log ('Q: Was I born in Seattle? A: ' + fromSeattle);
 if (fromSeattle === 'yes' || fromSeattle === 'y'){
   alert ('That\'s right. I was born in Seattle, but spent a lot of time in China when I was younger');
+  correctAnswer++;
 } else {
   alert ('so close. I am born in Seattle, but I was raised in China for 5 years.');
 }
@@ -43,6 +45,7 @@ var careerChange = career.toLowerCase();
 console.log ('Q: Did I decide to have a major career change? A: ' + careerChange);
 if (careerChange === 'yes' || careerChange === 'y'){
   alert ('Yes! How did you know? I used to work at Amazon for 3 years as a contract specialist. I am so excited to transition to become an SDE!');
+  correctAnswer++;
 }else {
   alert ('suprisingly, I just quit my job to commit going to school full time! I didn\'t have any technical experience before but I\'ll work hard to fulfill my dreams!');
 }
@@ -52,6 +55,7 @@ var sdeReadyLower = sdeReady.toLowerCase();
 console.log ('Q: Am I ready to be a SDE? A: ' + sdeReadyLower);
 if (sdeReadyLower === 'yes' || sdeReadyLower === 'y') {
   alert ('Aww I am flattered! But I think I need a little bit more practice');
+  correctAnswer++;
 } else {
   alert ('Have a little more faith in me! I\'m going to be so amazing in 5 months!');
 }
@@ -69,6 +73,7 @@ for(var counter= 4;counter>0; counter--){
   }
   else if(guessAge === '25') {
     alert ('Amazing! You guessed correctly!');
+    correctAnswer++;
     break;
 
   }
@@ -81,8 +86,16 @@ for (var counterD=6; counterD>0; counterD--){
 
   if (dessert.includes (guessDessert)) {
     alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessert.join(' ')+ ' are all my favorite desserts');
+    correctAnswer++;
     break;
   } else {
     alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
   }
+}
+//number of correct answers
+console.log('number of correct answers '+ correctAnswer);
+if (correctAnswer>=4){
+  alert('AMAZING! you got'+ correctAnswer +' /6 questions correct!' + userName + 'you sure know a lot about me!');
+} else {
+  alert('aww, you only got' + correctAnswer +' /6 questions correct.'+ userName +', were you even trying?');
 }
