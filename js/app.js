@@ -1,7 +1,7 @@
 'use strict';
 console.log ('js is linked');
 
-/*
+
 //Welcome ask name
 var userName = prompt ('Hi, Nice to meet you, what is your name?');
 console.log ('vistor\'s name is ' + userName);
@@ -54,7 +54,7 @@ if (sdeReadyLower === 'yes' || sdeReadyLower === 'y') {
   alert ('Aww I am flattered! But I think I need a little bit more practice');
 } else {
   alert ('Have a little more faith in me! I\'m going to be so amazing in 5 months!');
-}*/
+}
 
 //Guess how old I am
 for(var counter= 4;counter>0; counter--){
@@ -71,5 +71,18 @@ for(var counter= 4;counter>0; counter--){
     alert ('Amazing! You guessed correctly!');
     break;
 
+  }
+}
+//Guess what desserts I like
+var dessert = ['cheesecake', 'tiramisu', 'chocolate'];
+for (var counterD=6; counterD>0; counterD--){
+  var guessDessert = prompt ('Now can you figure out what dessert I like? I\'ll give you ' + counterD + ' tries').toLowerCase();
+  console.log ('Dessert Guessed:' + guessDessert);
+
+  if (dessert.includes (guessDessert)) {
+    alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessert.join(' ')+ ' are all my favorite desserts');
+    break;
+  } else {
+    alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
   }
 }
