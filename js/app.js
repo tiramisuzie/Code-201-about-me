@@ -1,7 +1,11 @@
 'use strict';
 console.log ('js is linked');
+//Welcome ask name
+var userName = prompt ('Hi, Nice to meet you, what is your name?');
+console.log ('vistor\'s name is ' + userName);
+alert ('welcome ' + userName + '! I hope you can learn a little bit about me.');
 
-//Greeting message
+//Play game
 var greetings = prompt ('Would you like to play a guessing game?');
 var greetingsResponse = greetings.toLowerCase();
 console.log ('Q: Would you like to play a guessing game? A: ' + greetingsResponse);
@@ -27,13 +31,19 @@ console.log ('Q: Was I born in Seattle? A: ' + fromSeattle);
 if (fromSeattle === 'yes' || fromSeattle === 'y'){
   alert ('That\'s right. I was born in Seattle, but spent a lot of time in China when I was younger');
 } else {
-  alert ('so close. I am born in Seattle, but I was raised in China for 5 years.')
+  alert ('so close. I am born in Seattle, but I was raised in China for 5 years.');
 }
-
 //
 
 //major career change?
-
+var career = prompt ('Did I decide to have a major career change?');
+var careerChange = career.toLowerCase();
+console.log ('Q: Did I decide to have a major career change? A: ' + careerChange);
+if (careerChange === 'yes' || careerChange === 'y'){
+  alert ('Yes! How did you know? I used to work at Amazon for 3 years as a contract specialist. I am so excited to transition to become an SDE!');
+}else {
+  alert ('suprisingly, I just quit my job to commit going to school full time! I didn\'t have any technical experience before but I\'ll work hard to fulfill my dreams!');
+}
 //Am I ready to be a SDE?
 var sdeReady = prompt ('Am I ready to become an SDE');
 var sdeReadyLower = sdeReady.toLowerCase();
