@@ -1,5 +1,7 @@
 'use strict';
 console.log ('js is linked');
+
+/*
 //Welcome ask name
 var userName = prompt ('Hi, Nice to meet you, what is your name?');
 console.log ('vistor\'s name is ' + userName);
@@ -52,4 +54,22 @@ if (sdeReadyLower === 'yes' || sdeReadyLower === 'y') {
   alert ('Aww I am flattered! But I think I need a little bit more practice');
 } else {
   alert ('Have a little more faith in me! I\'m going to be so amazing in 5 months!');
+}*/
+
+//Guess how old I am
+for(var counter= 4;counter>0; counter--){
+  var guessAge = prompt ('So how old do you think I am? you have ' + counter +' of tries left.');
+  console.log ('Age Guessed: ' + guessAge);
+
+  if (guessAge > 25){
+    alert ('Do I really seem that old to you?? Try again, I\'m younger than you think.');
+  }
+  else if (guessAge < 25){
+    alert ('Now you\'re flattering me. Try again, I\'m a little bit older than you might think');
+  }
+  else if(guessAge === '25') {
+    alert ('Amazing! You guessed correctly!');
+    break;
+
+  }
 }
