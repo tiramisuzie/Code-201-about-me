@@ -31,7 +31,6 @@ function askingQuestions(myArray) {
 }
 
 
-
 //Welcome ask name
 var userName = prompt ('Hi, Nice to meet you, what is your name?');
 console.log ('vistor\'s name is ' + userName);
@@ -62,25 +61,29 @@ function askingNumber(){
 askingNumber();
 
 
+//Guess what desserts I like
+var dessert = ['cheesecake', 'tiramisu', 'chocolate'];
+function askingDessert(dessertArray){
+  for (var counterD=6; counterD>0; counterD--){
+    var guessDessert = prompt ('Now can you figure out what dessert I like? I\'ll give you ' + counterD + ' tries').toLowerCase();
+    console.log ('Dessert Guessed:' + guessDessert);
 
-// //Guess what desserts I like
-// var dessert = ['cheesecake', 'tiramisu', 'chocolate'];
-// for (var counterD=6; counterD>0; counterD--){
-//   var guessDessert = prompt ('Now can you figure out what dessert I like? I\'ll give you ' + counterD + ' tries').toLowerCase();
-//   console.log ('Dessert Guessed:' + guessDessert);
+    if (dessertArray.includes (guessDessert)) {
+      alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessertArray.join(' ')+ ' are all my favorite desserts');
+      correctAnswer++;
+      break;
+    } else {
+      alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
+    }
+  }
+}
 
-//   if (dessert.includes (guessDessert)) {
-//     alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessert.join(' ')+ ' are all my favorite desserts');
-//     correctAnswer++;
-//     break;
-//   } else {
-//     alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
-//   }
-// }
-// //number of correct answers
-// console.log('number of correct answers '+ correctAnswer);
-// if (correctAnswer>=4){
-//   alert('AMAZING! you got'+ correctAnswer +' /6 questions correct!' + userName + 'you sure know a lot about me!');
-// } else {
-//   alert('aww, you only got' + correctAnswer +' /6 questions correct.'+ userName +', were you even trying?');
-// }
+askingDessert(dessert);
+
+//number of correct answers
+console.log('number of correct answers '+ correctAnswer);
+if (correctAnswer>=4){
+  alert('AMAZING! you got'+ correctAnswer +' /6 questions correct!' + userName + 'you sure know a lot about me!');
+} else {
+  alert('aww, you only got' + correctAnswer +' /6 questions correct.'+ userName +', were you even trying?');
+}
