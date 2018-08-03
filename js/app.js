@@ -4,23 +4,23 @@ console.log ('js is linked');
 //Variables and Arrays
 var correctAnswer = 0;
 
-var question1 = 'Would you like to play a guessing game?';
-var question2 = 'Is my name Suzanne?';
-var question3 = 'Was I born in Seattle?';
-var question4 = 'Did I decide to have a major career change?';
-var question5 = 'Am I ready to become an SDE';
+var question1 = 'Was I born in Seattle?';
+var question2 = 'Do I like animals?';
+var question3 = 'Have I been to Japan?';
+var question4 = 'Do I have a sweet tooth?';
+var question5 = 'Do I have any siblings?';
 
-var response1 = 'Would you like to play a guessing game?';
-var response2 = 'Is my name Suzanne?';
-var response3 = 'Was I born in Seattle?';
-var response4 = 'Did I decide to have a major career change?';
-var response5 = 'Am I ready to become an SDE';
+var response1 = 'That\'s correct! I was born and raised in Seattle, but somehow I am still not used to the rain.';
+var response2 = 'I sure do! I even have a cute little shiba, she just turned 1 year and 4 months.';
+var response3 = 'Correct. I just got back from Tokyo, I plan to visit other places in Japan soon.';
+var response4 = 'You bet! I love sweets!';
+var response5 = 'That\'s right. I have 2 siblings, a brother and sister. I am the youngest of both';
 
-var incorrect1 = 'Incorrect answer.';
-var incorrect2 = 'Incorrect answer.';
-var incorrect3 = 'Incorrect answer.';
-var incorrect4 = 'Incorrect answer.';
-var incorrect5 = 'Incorrect answer.';
+var incorrect1 = 'Not quite, I was born in Seattle.';
+var incorrect2 = 'What? Who doesn\'t like animals?! I hope one day I can adopt at least 10 dogs.';
+var incorrect3 = 'Not quite, I recently came back from Tokyo a few months ago';
+var incorrect4 = 'Incorrect. I love sweets, maybe a little too much.';
+var incorrect5 = 'Incorrect. I have a brother and a sister.';
 
 var storingQuestions = [question1, question2, question3, question4, question5];
 var storingResponses = [response1, response2, response3, response4, response5];
@@ -54,51 +54,51 @@ alert ('welcome ' + userName + '! I hope you can learn a little bit about me.');
 //Ask questions 1 through 5
 askingQuestions(storingQuestions, storingResponses, storingIncorrect);
 
-// //Guess how old I am
-// function askingNumber(){
-//   for(var counter = 4;counter>0; counter--){
-//     var guessAge = prompt ('So how old do you think I am? you have ' + counter +' of tries left.');
-//     console.log ('Age Guessed: ' + guessAge);
-//     if (guessAge > 25){
-//       alert ('Do I really seem that old to you?? Try again, I\'m younger than you think.');
-//     }
-//     else if (guessAge < 25){
-//       alert ('Now you\'re flattering me. Try again, I\'m a little bit older than you might think');
-//     }
-//     else if(guessAge === '25') {
-//       alert ('Amazing! You guessed correctly!');
-//       correctAnswer++;
-//       break;
-//     }
-//   }
-// }
+//Guess my favorite number
+function askingNumber(){
+  for(var counter = 4;counter>0; counter--){
+    var guessAge = prompt ('Can you guess what my favorite number is? you have ' + counter +' of tries left.');
+    console.log ('Age Guessed: ' + guessAge);
+    if (guessAge > 25){
+      alert ('Do I really seem that old to you?? Try again, I\'m younger than you think.');
+    }
+    else if (guessAge < 25){
+      alert ('Now you\'re flattering me. Try again, I\'m a little bit older than you might think');
+    }
+    else if(guessAge === '25') {
+      alert ('Amazing! You guessed correctly!');
+      correctAnswer++;
+      break;
+    }
+  }
+}
 
-// askingNumber();
+askingNumber();
 
 
-// //Guess what desserts I like
-// var dessert = ['cheesecake', 'tiramisu', 'chocolate'];
-// function askingDessert(dessertArray){
-//   for (var counterD=6; counterD>0; counterD--){
-//     var guessDessert = prompt ('Now can you figure out what dessert I like? I\'ll give you ' + counterD + ' tries').toLowerCase();
-//     console.log ('Dessert Guessed:' + guessDessert);
+//Guess what desserts I like
+var dessert = ['cheesecake', 'tiramisu', 'chocolate'];
+function askingDessert(dessertArray){
+  for (var counterD=6; counterD>0; counterD--){
+    var guessDessert = prompt ('Now can you figure out what dessert I like? I\'ll give you ' + counterD + ' tries').toLowerCase();
+    console.log ('Dessert Guessed:' + guessDessert);
 
-//     if (dessertArray.includes (guessDessert)) {
-//       alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessertArray.join(' ')+ ' are all my favorite desserts');
-//       correctAnswer++;
-//       break;
-//     } else {
-//       alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
-//     }
-//   }
-// }
+    if (dessertArray.includes (guessDessert)) {
+      alert ('Wow! How did you know!!' + guessDessert + ' is one of my favorite desserts! ' + dessertArray.join(' ')+ ' are all my favorite desserts');
+      correctAnswer++;
+      break;
+    } else {
+      alert (guessDessert + ' sounds good, but it\'s not my ultimate favorite.');
+    }
+  }
+}
 
-// askingDessert(dessert);
+askingDessert(dessert);
 
-// //number of correct answers
-// console.log('number of correct answers '+ correctAnswer);
-// if (correctAnswer>=4){
-//   alert('AMAZING! you got '+ correctAnswer +'/6 questions correct! ' + userName + ' you sure know a lot about me!');
-// } else {
-//   alert('aww, you only got ' + correctAnswer +'/6 questions correct. '+ userName +', were you even trying?');
-// }
+//number of correct answers
+console.log('number of correct answers '+ correctAnswer);
+if (correctAnswer>=4){
+  alert('AMAZING! you got '+ correctAnswer +'/6 questions correct! ' + userName + ' you sure know a lot about me!');
+} else {
+  alert('aww, you only got ' + correctAnswer +'/6 questions correct. '+ userName +', were you even trying?');
+}
