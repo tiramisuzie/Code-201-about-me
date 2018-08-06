@@ -26,6 +26,31 @@ var storingQuestions = [question1, question2, question3, question4, question5];
 var storingResponses = [response1, response2, response3, response4, response5];
 var storingIncorrect = [incorrect1, incorrect2, incorrect3, incorrect4, incorrect5];
 
+start(false);
+
+function start(enable) {
+  if (enable) {
+    var userName = welcome();
+    startQuiz();
+    result(userName);
+  }
+}
+
+function welcome() {
+  //Welcome ask name
+  var userName = prompt ('Hi, Nice to meet you, what is your name?');
+  console.log ('vistor\'s name is ' + userName);
+  alert ('welcome ' + userName + '! I hope you can learn a little bit about me.');
+  return userName;
+}
+
+function startQuiz() {
+  //Ask questions 1 through 5
+  askingQuestions(storingQuestions, storingResponses, storingIncorrect);
+  askingNumber();
+  askingDessert(dessert);
+}
+
 function askingQuestions(myArray, responsesArray, incorrectArray) {
   //Prompt user with questions and make lower case
   for(var i = 0; i < myArray.length; i++){
@@ -45,25 +70,16 @@ function askingQuestions(myArray, responsesArray, incorrectArray) {
   }
 }
 
-
-//Welcome ask name
-var userName = prompt ('Hi, Nice to meet you, what is your name?');
-console.log ('vistor\'s name is ' + userName);
-alert ('welcome ' + userName + '! I hope you can learn a little bit about me.');
-
-//Ask questions 1 through 5
-askingQuestions(storingQuestions, storingResponses, storingIncorrect);
-
 //Guess my favorite number
 function askingNumber(){
   for(var counter = 4;counter>0; counter--){
     var guessAge = prompt ('Can you guess what my favorite number is? you have ' + counter +' of tries left.');
     console.log ('Age Guessed: ' + guessAge);
     if (guessAge > 25){
-      alert ('Do I really seem that old to you?? Try again, I\'m younger than you think.');
+      alert ('Too high, try again.');
     }
     else if (guessAge < 25){
-      alert ('Now you\'re flattering me. Try again, I\'m a little bit older than you might think');
+      alert ('too low, try again.');
     }
     else if(guessAge === '25') {
       alert ('Amazing! You guessed correctly!');
@@ -72,8 +88,6 @@ function askingNumber(){
     }
   }
 }
-
-askingNumber();
 
 
 //Guess what desserts I like
@@ -93,12 +107,12 @@ function askingDessert(dessertArray){
   }
 }
 
-askingDessert(dessert);
-
-//number of correct answers
-console.log('number of correct answers '+ correctAnswer);
-if (correctAnswer>=4){
-  alert('AMAZING! you got '+ correctAnswer +'/6 questions correct! ' + userName + ' you sure know a lot about me!');
-} else {
-  alert('aww, you only got ' + correctAnswer +'/6 questions correct. '+ userName +', were you even trying?');
+function result(userName) {
+  //number of correct answers
+  console.log('number of correct answers '+ correctAnswer);
+  if (correctAnswer>=4){
+    alert('AMAZING! you got '+ correctAnswer +'/6 questions correct! ' + userName + ' you sure know a lot about me!');
+  } else {
+    alert('aww, you only got ' + correctAnswer +'/6 questions correct. '+ userName +', were you even trying?');
+  }
 }

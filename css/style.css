@@ -6,17 +6,55 @@ body {
   border: 8px;
   border-style: solid;
   border-color: white;
-
+  display: flex;
+  width: 1000px;
+  margin: auto;
 }
 
-h1 {text-align: center;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 35px;
-    border-style: solid;
-    border-color: grey;
-    background-color: #d4d4d4;
-    width: 470px;
-    
+.profile-container {
+    width: 33%;
+    border-right: white 4px solid;
+}
+
+.profile-img-container {
+    width: 60%;
+    margin: auto;
+}
+
+.profile-img {
+    border-radius: 100px;
+}
+
+.name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.goals {
+    padding: 16px 0px;
+    font-weight: bold;
+}
+.experience-container {
+    width: 66%;
+    padding-left: 12px;
+}
+
+.experience {
+    text-align: center;
+    padding-bottom: 16px;
+    font-weight: bold;
+}
+
+.job-title,
+.education {
+    padding-top: 8px;
+}
+
+.description {
+    border-bottom: white 4px solid;
+    padding-bottom: 8px;
+    padding-top: 8px;
 }
 
 ul { list-style-type: circle;
